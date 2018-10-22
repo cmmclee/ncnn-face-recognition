@@ -20,6 +20,7 @@ public:
     ~FeatureDB();
     int add_feature(const std::string name, std::vector<float> feature);
     int del_feature(const std::string name);
+    int refresh_feature();
     std::string find_name(std::vector<float> feature);
     std::vector<std::string> get_names();
 private:

@@ -99,6 +99,11 @@ bp::list FaceRecognition::get_names()
 
 }
 
+int FaceRecognition::refresh_db()
+{
+    featuredb->refresh_feature();
+}
+
 int FaceRecognition::add_person(bp::str str, int rows,int cols,bp::str img_data)
 {
     unsigned char *data = (unsigned char *) ((const char *) bp::extract<const char *>(img_data));
@@ -171,5 +176,6 @@ BOOST_PYTHON_MODULE (facerecognition)
             .def("add_person", &FaceRecognition::add_person)
             .def("del_person", &FaceRecognition::del_person)
             .def("get_names", &FaceRecognition::get_names)
-            .def("recognize", &FaceRecognition::recognize);
+            .def("recognize", &FaceRecognition::recognize)
+            .def("refresh_db", &FaceRecognition::refresh_db);
 }

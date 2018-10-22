@@ -92,6 +92,15 @@ void FeatureDB::save_feature()
     }
 
 }
+
+int FeatureDB::refresh_feature()
+{
+    features.clear();
+    load_feature();
+
+    return 0;
+}
+
 void FeatureDB::load_feature()
 {
     ifstream inf(dbfile);

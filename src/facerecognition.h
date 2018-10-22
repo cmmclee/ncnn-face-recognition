@@ -38,6 +38,7 @@ public:
     bp::list recognize(int rows,int cols,bp::str img_data);
     int add_person(bp::str str, int rows,int cols,bp::str img_data);
     int del_person(bp::str str);
+    int refresh_db();
     bp::list get_names();
 
 private:
